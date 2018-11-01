@@ -1,0 +1,29 @@
+package com.example.tomaszmatusik.mvp_tdd.main;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.verify;
+
+public class MainPresenterTest {
+
+    @Mock
+    private MainContract.View mainView;
+
+    private MainPresenter presenter;
+
+    @Before
+    public void setUp() throws Exception {
+        MockitoAnnotations.initMocks(this);
+        presenter = new MainPresenter(mainView);
+    }
+
+    @Test
+    public void handleLoadingToastOnStart() {
+        presenter.handleLoadingToastOnStart();
+        verify(mainView).loadToastOnStart();
+    }
+}
