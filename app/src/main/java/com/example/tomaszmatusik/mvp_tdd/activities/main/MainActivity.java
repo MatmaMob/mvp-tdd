@@ -1,4 +1,4 @@
-package com.example.tomaszmatusik.mvp_tdd.main;
+package com.example.tomaszmatusik.mvp_tdd.activities.main;
 
 import android.databinding.DataBindingUtil;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,6 @@ import android.widget.Toast;
 
 import com.example.tomaszmatusik.mvp_tdd.R;
 import com.example.tomaszmatusik.mvp_tdd.databinding.ActivityMainBinding;
-import com.example.tomaszmatusik.mvp_tdd.main.MainContract;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 

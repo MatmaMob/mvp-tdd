@@ -1,4 +1,4 @@
-package com.example.tomaszmatusik.mvp_tdd.main;
+package com.example.tomaszmatusik.mvp_tdd.activities.main;
 
 public interface MainContract {
 
