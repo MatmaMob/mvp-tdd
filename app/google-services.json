@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "633029858176",
+    "firebase_url": "https://bananapayment-f2a68.firebaseio.com",
+    "project_id": "bananapayment-f2a68",
+    "storage_bucket": "bananapayment-f2a68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:633029858176:android:89c7e0cb6c228d26",
+        "android_client_info": {
+          "package_name": "com.example.tomaszmatusik.mvp_tdd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "633029858176-j9bdgsbrjb88h040vj9vps5kkpgau1no.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaq8rjJE-e4w06M4tkhks0WsH5A0so0BY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
