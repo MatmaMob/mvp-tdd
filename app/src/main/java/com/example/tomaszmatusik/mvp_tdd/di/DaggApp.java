@@ -1,6 +1,10 @@
-package com.example.tomaszmatusik.mvp_tdd.dagger2;
+package com.example.tomaszmatusik.mvp_tdd.di;
 
 import android.app.Application;
+
+import com.example.tomaszmatusik.mvp_tdd.di.components.AppComponent;
+import com.example.tomaszmatusik.mvp_tdd.di.components.DaggerAppComponent;
+import com.example.tomaszmatusik.mvp_tdd.di.modules.AppModule;
 
 public class DaggApp extends Application {
 
