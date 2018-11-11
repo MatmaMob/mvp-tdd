@@ -2,7 +2,6 @@ package com.example.tomaszmatusik.mvp_tdd.di.modules;
 
 import android.content.Context;
 
-import com.example.tomaszmatusik.mvp_tdd.activities.main.MainContract;
 import com.example.tomaszmatusik.mvp_tdd.di.DaggApp;
 
 import dagger.Module;

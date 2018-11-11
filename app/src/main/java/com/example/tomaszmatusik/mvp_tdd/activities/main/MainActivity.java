@@ -7,24 +7,35 @@ import android.widget.Toast;
 
 import com.example.tomaszmatusik.mvp_tdd.R;
 import com.example.tomaszmatusik.mvp_tdd.activities.BaseActivity;
+import com.example.tomaszmatusik.mvp_tdd.adapters.ParentViewPagerAdapter;
 import com.example.tomaszmatusik.mvp_tdd.databinding.ActivityMainBinding;
-import com.example.tomaszmatusik.mvp_tdd.di.modules.MVPModule;
-import com.example.tomaszmatusik.mvp_tdd.di.components.DaggerMVPComponent;
+import com.example.tomaszmatusik.mvp_tdd.di.components.DaggerParentComponent;
+import com.example.tomaszmatusik.mvp_tdd.di.modules.ParentModule;
+import com.example.tomaszmatusik.mvp_tdd.fragments.main.MainFragment;
+import com.example.tomaszmatusik.mvp_tdd.fragments.users.UsersFragment;
 
 import javax.inject.Inject;
 
-public class MainActivity extends BaseActivity implements MainContract.View {
-
-    ActivityMainBinding mainBinding;
+public class MainActivity extends BaseActivity implements ParentContract.View {
 
     @Inject
-    MainPresenter presenter;
+    ParentPresenter parentPresenter;
+
+    ActivityMainBinding mainBinding;
 
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
         mainBinding = DataBindingUtil.setContentView(this, getContentView());
-        presenter.handleLoadingToastOnStart();
+        parentPresenter.handleInitViews();
+    }
+
+    @Override
+    public void setupViewPager() {
+        ParentViewPagerAdapter parentAdapter = new ParentViewPagerAdapter(getSupportFragmentManager());
+        parentAdapter.add(new MainFragment());
+        parentAdapter.add(new UsersFragment());
+        mainBinding.parentViewPager.setAdapter(parentAdapter);
     }
 
     @Override
@@ -33,17 +44,12 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-    }
-
-    @Override
     protected void resolveDaggerDependency() {
         super.resolveDaggerDependency();
-        DaggerMVPComponent
+        DaggerParentComponent
                 .builder()
                 .appComponent(getApplicationComponent())
-                .mVPModule(new MVPModule(this))
+                .parentModule(new ParentModule(this))
                 .build().inject(this);
     }
 
